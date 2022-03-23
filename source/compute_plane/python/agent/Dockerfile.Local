@@ -1,4 +1,4 @@
-FROM python:3.7.7-slim-buster
+FROM python:3.7-slim-buster
 
 
 RUN pip install setuptools==45.0.0
@@ -22,7 +22,7 @@ RUN pyinstaller --hidden-import=pkg_resources.py2_warn -F agent.py
 RUN cp ./dist/agent ./agent
 
 
-FROM python:3.7.7-slim-buster
+FROM python:3.7-slim-buster
 
 RUN apt-get update ; apt-get install -y build-essential
 RUN mkdir -p /app
